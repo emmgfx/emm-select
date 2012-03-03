@@ -1,0 +1,30 @@
+.cssselect{
+	display:inline-block;
+	width:200px;
+	padding:5px;
+	border:1px solid #c00;
+}
+	.cssselect .arrow{
+		display:block;
+		float:right;
+		position:relative;
+		top:6px;
+		right:3px;
+		width:1px;
+		height:1px;
+		border:5px solid transparent;
+		border-top-color:#000;
+	}
+	.cssselect .options{
+		display:none;
+		border:1px solid #c00;
+	}
+		.cssselect .options .option{
+			width:200px;
+			padding:5px;
+			background-color:#FFF;
+		}
+			.cssselect .options .option:hover{
+				background-color:#c00;
+				color:#FFF;
+			}
