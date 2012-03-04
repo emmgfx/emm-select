@@ -20,7 +20,9 @@
 			$(this).hide().attr("rand",rand).before('<div class="cssselect" id="cssselect'+rand+'">'+
 													'<div class="arrow"></div>'+
 													'<div class="title" rand="'+rand+'">'+title+'</div>'+
-													'<div class="options"></div>'+
+													'<div class="options">'+
+														'<div class="filter"><input type="text" name="filter" placeholder="Search..." /></div>'+
+													'</div>'+
 													'</div>');
 						
 			for(i=0;i<data.length;i++){
