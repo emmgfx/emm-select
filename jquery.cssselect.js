@@ -17,23 +17,24 @@
 
 			var title = $(this).children('option:nth-child(1)').text();
 
-			$(this).hide().attr("rand",rand).before('<div class="cssselect" id="cssselect'+rand+'">'+
-													'<div class="arrow"></div>'+
-													'<div class="title" rand="'+rand+'">'+title+'</div>'+
-													'<div class="options">'+
-														'<div class="filter"><input type="text" name="filter" placeholder="Search..." /></div>'+
+			$(this).hide().attr("rand",rand).before('<div class="cssselect" id="cssselect'+rand+'" rand="'+rand+'">'+
+														'<div class="arrow"></div>'+
+														'<div class="title" rand="'+rand+'">'+title+'</div>'+
 													'</div>'+
+													'<div class="cssselectoptions" rand="'+rand+'">'+
+														'<div class="filter"><input type="text" name="filter" placeholder="Search..." /></div>'+
 													'</div>');
 						
 			for(i=0;i<data.length;i++){
-				$("#cssselect"+rand+" > .options").append('<div class="option" value="'+data[i][0]+'" rand="'+rand+'">'+data[i][1]+'</div>');
+				$('.cssselectoptions[rand="'+rand+'"]').append('<div class="option" value="'+data[i][0]+'" rand="'+rand+'">'+data[i][1]+'</div>');
 			}
 			
 			data = [];
 			
 		});
 		
-		$(".cssselect .option").live("click",function(){
+		$(".cssselectoptions .option").live("click",function(){
+			$(this).parent(".cssselectoptions").slideUp("fast");
 			var rand	= $(this).attr("rand");
 			var value	= $(this).attr("value");
 			var key		= $(this).text();
@@ -47,15 +48,24 @@
 
 
 		$(".cssselect").live("click",function(){
+			$(".cssselectoptions").slideUp("fast");
 			var coords	= $(this).offset();
 			var ancho	= $(this).css("width");
 			var alto	= $(this).css("height");
-			$(this)	.children(".options")
-					.css("top",coords.top+29+"px")
-					.css("left",coords.left+"px")
-					.css("position","absolute")
-					.css("width",ancho+"px")
-					.slideToggle("fast");
+			var rand	= $(this).attr("rand");
+			$('.cssselectoptions[rand="'+rand+'"]')
+				.css("top",coords.top+29+"px")
+				.css("left",coords.left+"px")
+				.css("position","absolute")
+				.css("width",ancho+"px")
+				.slideDown("fast");
+		});
+		
+		$(".cssselectoptions input").live("keyup",function(){
+			var rand	= $(this).parent(".filter").parent('.cssselectoptions').attr("rand");
+			var val		= $(this).val();
+			$('.cssselectoptions[rand="'+rand+'"] .option').hide();
+			$('.cssselectoptions[rand="'+rand+'"] .option:contains("'+val+'")').show();
 		});
 	};
 })(jQuery);

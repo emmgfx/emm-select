@@ -3,7 +3,6 @@
 	width:200px;
 	padding:5px;
 	border:1px solid #cc8b6b;
-	border-radius:5px;
 	background-color: #ededed;
 }
 	.cssselect .arrow{
@@ -21,27 +20,23 @@
 		height:1px;
 		border-top-color: #aeaeae;
 	}
-	.cssselect .options{
+	.cssselectoptions{
 		display:none;
 		border:1px solid #cc8b6b;
-		border-radius:5px;
 		background-color:#f2f2f2;
 	}
-		.cssselect .options .option{
+		.cssselectoptions .option{
 			width:200px;
 			padding:5px;
 			background-color: #f2f2f2;
 		}
-		.cssselect . options .filter input{
-			width:400px;
+		.cssselectoptions .filter input{
+			width:184px;
+			border:1px solid #cc8b6b;
+			padding:6px;
+			margin:6px;
 		}
-		.cssselect .options .option:last-child{
-			border-radius:0px 0px 4px 4px;
-		}
-		.cssselect .options .option:first-child{
-			border-radius:4px 4px 0px 0px;
-		}
-			.cssselect .options .option:hover{
+			.cssselectoptions .option:hover{
 				background-color:#cc8b6b;
 				color:#FFF;
 			}
