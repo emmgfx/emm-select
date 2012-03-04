@@ -22,7 +22,7 @@
 														'<div class="title" rand="'+rand+'">'+title+'</div>'+
 													'</div>'+
 													'<div class="cssselectoptions" rand="'+rand+'">'+
-														'<div class="filter"><input type="text" name="filter" placeholder="Search..." /></div>'+
+														'<div class="filter"><input type="text" name="filter" placeholder="Search... (case sensitive)" /></div>'+
 													'</div>');
 						
 			for(i=0;i<data.length;i++){
@@ -58,14 +58,17 @@
 				.css("left",coords.left+"px")
 				.css("position","absolute")
 				.css("width",ancho+"px")
-				.slideDown("fast");
+				.slideToggle("fast",function(){
+					$(this).children(".filter").children("input").focus();
+				});
+				
 		});
 		
 		$(".cssselectoptions input").live("keyup",function(){
 			var rand	= $(this).parent(".filter").parent('.cssselectoptions').attr("rand");
 			var val		= $(this).val();
-			$('.cssselectoptions[rand="'+rand+'"] .option').hide();
-			$('.cssselectoptions[rand="'+rand+'"] .option:contains("'+val+'")').show();
+			$('.cssselectoptions[rand="'+rand+'"] .option').slideUp("fast");
+			$('.cssselectoptions[rand="'+rand+'"] .option:contains("'+val+'")').stop().slideDown("fast");
 		});
 	};
 })(jQuery);

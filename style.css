@@ -36,6 +36,9 @@
 			padding:6px;
 			margin:6px;
 		}
+		.cssselectoptions .filter input:focus{
+			outline:none;
+		}
 			.cssselectoptions .option:hover{
 				background-color:#cc8b6b;
 				color:#FFF;
