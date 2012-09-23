@@ -16,7 +16,7 @@
 	<script type="text/javascript">
 		$(function(){
 			$(".apply").live("click",function(){
-				$('select').CSSSelect("Titulo");
+				$('select').CSSSelect("Default title defined : )");
 				$(this).remove();
 				return false;
 			});
@@ -51,6 +51,7 @@
 <hr size="1" />
 
 <select class="a">
+	<option></option>
 	<option>HTML</option>
 	<option>CSS</option>
 	<option>Javascript</option>
@@ -58,7 +59,7 @@
 	<option>MySQL</option>
 </select>
 
-<select class="b">
+<select class="b" filter="true">
 	<option>Launchpad</option>
 	<option>Google Chrome</option>
 	<option>Coda 2</option>
@@ -89,7 +90,7 @@
 
 <ul>
 	<li>Demo &raquo; <a href="http://www.viciana.me/CSSSelect/demo.html">http://www.viciana.me/CSSSelect/demo.html</a></li>
-	<li>Source (Github) &raquo; <a href="http://www.github.com/emmgfx/CSSSelect">http://www.github.com/emmgfx/CSSSelect</a></li>
+	<li>Source & documentation (Github) &raquo; <a href="http://www.github.com/emmgfx/CSSSelect">http://www.github.com/emmgfx/CSSSelect</a></li>
 </ul>
 
 </body>
