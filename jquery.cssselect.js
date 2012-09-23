@@ -54,7 +54,7 @@
 			var alto	= $(this).css("height");
 			var rand	= $(this).attr("rand");
 			$('.cssselectoptions[rand="'+rand+'"]')
-				.css("top",coords.top+29+"px")
+				.css("top",coords.top+26+"px")
 				.css("left",coords.left+"px")
 				.css("position","absolute")
 				.css("width",ancho+"px")
