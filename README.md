@@ -1,4 +1,4 @@
 CSSSelect
 =========
 
-No description yet, :$
+View demo: http://viciana.me/CSSSelect/demo.html
