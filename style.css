@@ -66,17 +66,24 @@
 		display:none;
 		border:1px solid #1f232a;
 		background-color:#262b31;
+		box-shadow:	0px 5px 10px rgba(0,0,0,0.53),
+					inset 0px -1px 0px 0px rgba(255,255,255,0.1),
+					inset 1px 0px 0px 0px rgba(255,255,255,0.1),
+					inset -1px 0px 0px 0px rgba(255,255,255,0.1);
+		border-radius:0px 0px 3px 3px;
 	}
 		.cssselectoptions .option{
 			cursor:pointer;
 			width:198px;
 			box-sizing: border-box;
 			padding:7px;
-			background-color: #262b31;
 			color:#acb3bf;
 			font-weight: bold;
 			font-size:11px;
 			text-shadow:0px 1px 0px black;
+		}
+		.cssselectoptions .option:last-child{
+			border-radius:0px 0px 3px 3px;
 		}
 			.cssselectoptions .option:hover{
 				background: #5b9bd1; /* Old browsers */
@@ -103,12 +110,20 @@
 		.cssselectoptions .filter input{
 			width:186px;
 			box-sizing: border-box;
-			border:1px solid #1f232a;
+			border:1px solid rgba(255,255,255,0.17);
 			padding:6px;
 			margin:6px;
 			background-color: #191e27;
 			color:#FFF;
 			font-weight: bold;
+		}
+		.cssselectoptions .filter input::-webkit-input-placeholder {
+		    color:    #303b44;
+		    font-weight: bold;
+		}
+		.cssselectoptions .filter input:-moz-placeholder {
+		    color:    #303b44;
+		    font-weight: bold;
 		}
 		.cssselectoptions .filter input:focus{
 			outline:none;
