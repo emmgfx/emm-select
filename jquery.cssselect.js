@@ -67,8 +67,12 @@
 		$(".cssselectoptions input").live("keyup",function(){
 			var rand	= $(this).parent(".filter").parent('.cssselectoptions').attr("rand");
 			var val		= $(this).val();
-			$('.cssselectoptions[rand="'+rand+'"] .option').slideUp("fast");
-			$('.cssselectoptions[rand="'+rand+'"] .option:contains("'+val+'")').stop().slideDown("fast");
+			if(val!=""){
+				$('.cssselectoptions[rand="'+rand+'"] .option').stop().slideUp("fast");
+				$('.cssselectoptions[rand="'+rand+'"] .option:contains("'+val+'")').stop().slideDown("fast");
+			}else{
+				$('.cssselectoptions[rand="'+rand+'"] .option').stop().slideDown("fast");
+			}
 		});
 	};
 })(jQuery);
