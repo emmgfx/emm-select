@@ -1,4 +1,4 @@
-.cssselect{
+.emmselect{
 	display:inline-block;
 	width:200px;
 	box-sizing: border-box;
@@ -29,7 +29,7 @@
 	-moz-user-select: none;
 	-khtml-user-select: none;				
 }
-	.cssselect:hover{
+	.emmselect:hover{
 		background: #545f70; /* Old browsers */
 		background: -moz-linear-gradient(top,  #545f70 0%, #424b58 100%); /* FF3.6+ */
 		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#545f70), color-stop(100%,#424b58)); /* Chrome,Safari4+ */
@@ -39,7 +39,7 @@
 		background: linear-gradient(to bottom,  #545f70 0%,#424b58 100%); /* W3C */
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#545f70', endColorstr='#424b58',GradientType=0 ); /* IE6-9 */
 	}
-	.cssselect:active{
+	.emmselect:active{
 		background: #3e4754; /* Old browsers */
 		background: -moz-linear-gradient(top,  #3e4754 0%, #2e353e 100%); /* FF3.6+ */
 		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3e4754), color-stop(100%,#2e353e)); /* Chrome,Safari4+ */
@@ -49,7 +49,7 @@
 		background: linear-gradient(to bottom,  #3e4754 0%,#2e353e 100%); /* W3C */
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e4754', endColorstr='#2e353e',GradientType=0 ); /* IE6-9 */
 	}
-	.cssselect .arrow{
+	.emmselect .arrow{
 		border-left-color: transparent;
 		border-bottom-color: transparent;
 		border-right-color: transparent;
@@ -64,7 +64,7 @@
 		height:1px;
 		border-top-color: #FFF;
 	}
-	.cssselectoptions{
+	.emmselectoptions{
 		display:none;
 		border:1px solid #1f232a;
 		background-color:#262b31;
@@ -74,7 +74,7 @@
 					inset -1px 0px 0px 0px rgba(255,255,255,0.1);
 		border-radius:0px 0px 3px 3px;
 	}
-		.cssselectoptions .option{
+		.emmselectoptions .option{
 			cursor:pointer;
 			width:198px;
 			box-sizing: border-box;
@@ -84,10 +84,10 @@
 			font-size:11px;
 			text-shadow:0px 1px 0px black;
 		}
-		.cssselectoptions .option:last-child{
+		.emmselectoptions .option:last-child{
 			border-radius:0px 0px 3px 3px;
 		}
-			.cssselectoptions .option:hover{
+			.emmselectoptions .option:hover{
 				background: #5b9bd1; /* Old browsers */
 				background: -moz-linear-gradient(top,  #5b9bd1 0%, #416fb9 100%); /* FF3.6+ */
 				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5b9bd1), color-stop(100%,#416fb9)); /* Chrome,Safari4+ */
@@ -99,7 +99,7 @@
 				box-shadow:	0px 1px 0px #000,
 							inset 0px 1px 0px 0px #7cafda;
 			}
-			.cssselectoptions .option:active{
+			.emmselectoptions .option:active{
 				background: #3785c5; /* Old browsers */
 				background: -moz-linear-gradient(top,  #3785c5 0%, #375d9b 100%); /* FF3.6+ */
 				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3785c5), color-stop(100%,#375d9b)); /* Chrome,Safari4+ */
@@ -109,7 +109,7 @@
 				background: linear-gradient(to bottom,  #3785c5 0%,#375d9b 100%); /* W3C */
 				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3785c5', endColorstr='#375d9b',GradientType=0 ); /* IE6-9 */
 			}
-		.cssselectoptions .filter input{
+		.emmselectoptions .filter input{
 			width:186px;
 			box-sizing: border-box;
 			border:1px solid rgba(255,255,255,0.17);
@@ -119,18 +119,18 @@
 			color:#FFF;
 			font-weight: bold;
 		}
-		.cssselectoptions .filter input::-webkit-input-placeholder {
+		.emmselectoptions .filter input::-webkit-input-placeholder {
 		    color:    #303b44;
 		    font-weight: bold;
 		}
-		.cssselectoptions .filter input:-moz-placeholder {
+		.emmselectoptions .filter input:-moz-placeholder {
 		    color:    #303b44;
 		    font-weight: bold;
 		}
-		.cssselectoptions .filter input:focus{
+		.emmselectoptions .filter input:focus{
 			outline:none;
 		}
-			.cssselectoptions .option:hover{
+			.emmselectoptions .option:hover{
 				background-color:#cc8b6b;
 				color:#FFF;
 			}

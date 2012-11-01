@@ -1,5 +1,5 @@
 (function($){
-	$.fn.CSSSelect = function(title){
+	$.fn.emmselect = function(title){
 		var data = new Array();
 		this.each(function(e){
 		
@@ -28,30 +28,30 @@
 				data.push(data2);
 			});
 
-			$(this).hide().attr("rand",rand).before('<div class="cssselect" id="cssselect'+rand+'" rand="'+rand+'">'+
+			$(this).hide().attr("rand",rand).before('<div class="emmselect" id="emmselect'+rand+'" rand="'+rand+'">'+
 														'<div class="arrow"></div>'+
 														'<div class="title" rand="'+rand+'">'+title+'</div>'+
 													'</div>'+
-													'<div class="cssselectoptions" rand="'+rand+'">'+
+													'<div class="emmselectoptions" rand="'+rand+'">'+
 													'</div>');
 			if(filter){
-				$('.cssselectoptions[rand="'+rand+'"]').append('<div class="filter"><input type="text" name="filter" placeholder="Search... (case sensitive)" /></div>');
+				$('.emmselectoptions[rand="'+rand+'"]').append('<div class="filter"><input type="text" name="filter" placeholder="Search... (case sensitive)" /></div>');
 			}
 						
 			for(i=0;i<data.length;i++){
-				if(data[i][1]!=''){$('.cssselectoptions[rand="'+rand+'"]').append('<div class="option" value="'+data[i][0]+'" rand="'+rand+'">'+data[i][1]+'</div>');}
+				if(data[i][1]!=''){$('.emmselectoptions[rand="'+rand+'"]').append('<div class="option" value="'+data[i][0]+'" rand="'+rand+'">'+data[i][1]+'</div>');}
 			}
 			
 			data = [];
 			
 		});
 		
-		$(".cssselectoptions .option").live("click",function(){
-			$(this).parent(".cssselectoptions").fadeOut("fast");
+		$(".emmselectoptions .option").live("click",function(){
+			$(this).parent(".emmselectoptions").fadeOut("fast");
 			var rand	= $(this).attr("rand");
 			var value	= $(this).attr("value");
 			var key		= $(this).text();
-			$("#cssselect"+rand+" > .title").text(key);
+			$("#emmselect"+rand+" > .title").text(key);
 			$('select[rand="'+rand+'"] option').each(function(e){
 				if($(this).val()==value){
 					$(this).attr("selected","selected");
@@ -60,16 +60,16 @@
 		});
 
 
-		$(".cssselect").live("click",function(){
+		$(".emmselect").live("click",function(){
 			var coords	= $(this).offset();
 			var ancho	= $(this).css("width");
 			var alto	= $(this).css("height");
 			var rand	= $(this).attr("rand");
-			if($('.cssselectoptions[rand="'+rand+'"]:visible').size()>0){
-				$(".cssselectoptions").slideUp("fast");
+			if($('.emmselectoptions[rand="'+rand+'"]:visible').size()>0){
+				$(".emmselectoptions").slideUp("fast");
 			}else{
-				$(".cssselectoptions").slideUp("fast");
-				$('.cssselectoptions[rand="'+rand+'"]')
+				$(".emmselectoptions").slideUp("fast");
+				$('.emmselectoptions[rand="'+rand+'"]')
 					.css("top",coords.top+26+"px")
 					.css("left",coords.left+"px")
 					.css("position","absolute")
@@ -80,14 +80,14 @@
 			}
 		});
 		
-		$(".cssselectoptions input").live("keyup",function(){
-			var rand	= $(this).parent(".filter").parent('.cssselectoptions').attr("rand");
+		$(".emmselectoptions input").live("keyup",function(){
+			var rand	= $(this).parent(".filter").parent('.emmselectoptions').attr("rand");
 			var val		= $(this).val();
 			if(val!=""){
-				$('.cssselectoptions[rand="'+rand+'"] .option').stop().slideUp("fast");
-				$('.cssselectoptions[rand="'+rand+'"] .option:contains("'+val+'")').stop().slideDown("fast");
+				$('.emmselectoptions[rand="'+rand+'"] .option').stop().slideUp("fast");
+				$('.emmselectoptions[rand="'+rand+'"] .option:contains("'+val+'")').stop().slideDown("fast");
 			}else{
-				$('.cssselectoptions[rand="'+rand+'"] .option').stop().slideDown("fast");
+				$('.emmselectoptions[rand="'+rand+'"] .option').stop().slideDown("fast");
 			}
 		});
 	};

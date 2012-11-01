@@ -1,7 +1,7 @@
-CSSSelect
+emm-select
 =========
 _____________
-View demo: http://viciana.me/CSSSelect/demo.html
+View demo: http://viciana.me/emmselect/demo.html
 _____________
 
 Documentation
