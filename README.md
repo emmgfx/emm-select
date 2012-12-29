@@ -1,7 +1,7 @@
 emm-select
 =========
 _____________
-View demo: http://viciana.me/emmselect/demo.html
+View demo: http://viciana.me/emm-select/demo.html
 _____________
 
 Documentation
