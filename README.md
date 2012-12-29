@@ -21,7 +21,7 @@ You can use the "filter" attribute, set to "true" like in the sample, to include
 
 Sample jQuery:
 
-    $('select.b').CSSSelect("Default title defined : )");
+    $('select.b').emmselect("Default title defined : )");
 
 In this sample I used a default title. If the first option element of the select is in blank this text be used as the title.
 
