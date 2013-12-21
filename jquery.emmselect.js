@@ -46,7 +46,8 @@
 			
 		});
 		
-		$(".emmselectoptions .option").live("click",function(){
+/* 		$(".emmselectoptions .option").live("click",function(){ */
+		$(document).on("click",".emmselectoptions .option",function(){
 			$(this).parent(".emmselectoptions").fadeOut("fast");
 			var rand	= $(this).attr("rand");
 			var value	= $(this).attr("value");
@@ -60,7 +61,8 @@
 		});
 
 
-		$(".emmselect").live("click",function(){
+/* 		$(".emmselect").live("click",function(){ */
+		$(document).on("click",".emmselect",function(){
 			var coords	= $(this).offset();
 			var ancho	= $(this).css("width");
 			var alto	= $(this).css("height");
@@ -80,7 +82,8 @@
 			}
 		});
 		
-		$(".emmselectoptions input").live("keyup",function(){
+/* 		$(".emmselectoptions input").live("keyup",function(){ */
+		$(document).on("keyup",".emmselectoptions input",function(){
 			var rand	= $(this).parent(".filter").parent('.emmselectoptions').attr("rand");
 			var val		= $(this).val();
 			if(val!=""){
