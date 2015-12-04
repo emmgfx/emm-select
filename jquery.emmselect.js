@@ -10,32 +10,28 @@
 			if(title2!=''){
 				title=title2;
 			}
+						
+			filter 	= ($(this).attr("filter")=='true');
+			cs 		= ($(this).attr("case_sensitive")=='true');
 			
-			if($(this).attr("filter")=='true'){
-				filter = true;
-			}else{
-				filter = false;
-			}
-
-
 			$(this).children('option').each(function(e){
 				var value	= $(this).attr("value");
 				var key		= $(this).text();
-				var data2 = [
+				var data2 	= [
 					value,
 					key
 				]
 				data.push(data2);
 			});
 
-			$(this).hide().attr("rand",rand).before('<div class="emmselect" id="emmselect'+rand+'" rand="'+rand+'">'+
+			$(this).hide().attr("rand",rand).before('<div class="emmselect" id="emmselect'+rand+'" rand="'+rand+'" case_sensitive="'+cs+'">'+
 														'<div class="arrow"></div>'+
 														'<div class="title" rand="'+rand+'">'+title+'</div>'+
 													'</div>'+
-													'<div class="emmselectoptions" rand="'+rand+'">'+
+													'<div class="emmselectoptions" rand="'+rand+'" case_sensitive="'+cs+'">'+
 													'</div>');
 			if(filter){
-				$('.emmselectoptions[rand="'+rand+'"]').append('<div class="filter"><input type="text" name="filter" placeholder="Search... (case sensitive)" /></div>');
+				$('.emmselectoptions[rand="'+rand+'"]').append('<div class="filter"><input type="text" name="filter" placeholder="Search..." /></div>');
 			}
 						
 			for(i=0;i<data.length;i++){
@@ -85,13 +81,25 @@
 /* 		$(".emmselectoptions input").live("keyup",function(){ */
 		$(document).on("keyup",".emmselectoptions input",function(){
 			var rand	= $(this).parent(".filter").parent('.emmselectoptions').attr("rand");
+			var cs 		= ($(this).parent(".filter").parent('.emmselectoptions').attr("case_sensitive")=='true');
 			var val		= $(this).val();
 			if(val!=""){
 				$('.emmselectoptions[rand="'+rand+'"] .option').stop().slideUp("fast");
-				$('.emmselectoptions[rand="'+rand+'"] .option:contains("'+val+'")').stop().slideDown("fast");
+				if(cs){
+					$('.emmselectoptions[rand="'+rand+'"] .option:contains("'+val+'")').stop().slideDown("fast");
+				} else {
+					$('.emmselectoptions[rand="'+rand+'"] .option:containsi("'+val+'")').stop().slideDown("fast");
+				}
 			}else{
 				$('.emmselectoptions[rand="'+rand+'"] .option').stop().slideDown("fast");
 			}
 		});
 	};
 })(jQuery);
+$.extend($.expr[':'], {
+  'containsi': function(elem, i, match, array)
+  {
+    return (elem.textContent || elem.innerText || '').toLowerCase()
+    .indexOf((match[3] || "").toLowerCase()) >= 0;
+  }
+});
